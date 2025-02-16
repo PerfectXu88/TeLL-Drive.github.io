@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Papers and Videos</title>
+    <title>TeLL-Drive: Enhancing Autonomous Driving</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f0f2f5;
+            background-color: #f7f8fc;
             color: #333;
         }
         header {
@@ -23,9 +23,10 @@
         header h1 {
             margin: 1.5rem 0;
             font-weight: 700;
-            font-size: 2.4rem;
+            font-size: 2.6rem;
+            line-height: 1.2;
         }
-        .github-button {
+        .github-button, .paper-button {
             display: inline-block;
             background-color: #333;
             color: #fff;
@@ -35,12 +36,13 @@
             font-weight: 700;
             transition: background-color 0.3s ease;
             margin-top: 2rem;
+            margin-right: 1rem;
         }
-        .github-button:hover {
+        .github-button:hover, .paper-button:hover {
             background-color: #555;
         }
         .container {
-            max-width: 900px;
+            max-width: 1000px;
             margin: 2rem auto;
             padding: 2rem;
             background-color: #fff;
@@ -53,12 +55,12 @@
         .section h2 {
             color: #3a3f44;
             text-align: center;
-            font-size: 2.5rem;
+            font-size: 2.4rem;
             margin-bottom: 1rem;
         }
         .section p {
             line-height: 1.8;
-            font-size: 1rem;
+            font-size: 1.1rem;
             color: #555;
         }
         .authors {
@@ -80,11 +82,11 @@
         .images img {
             max-width: 100%;
             border-radius: 8px;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
         .images h3 {
-            font-size: 1.0rem;
+            font-size: 1.1rem;
             color: #555;
             text-align: left;
             margin-top: 0.5rem;
@@ -93,20 +95,13 @@
             width: 100%;
             height: auto;
             border-radius: 8px;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
-        .video h3 {
-            font-size: 1.5rem;
+        .video h3, .video h4 {
             color: #555;
+            font-size: 1.2rem;
             text-align: center;
-            margin-top: 1.5rem;
-        }
-        .video h4 {
-            font-size: 1.0rem;
-            color: #555;
-            text-align: left;
-            margin-top: 1.5rem;
         }
     </style>
 </head>
@@ -114,9 +109,10 @@
     <header>
         <h1>TeLL-Drive: Enhancing Autonomous Driving with</h1>
         <h1>Teacher LLM-Guided Deep Reinforcement Learning</h1>
-        <a href="https://github.com/PerfectXu88/TeLL-Drive.github.io" class="github-button" target="_blank">
-            View on GitHub
-        </a>
+        <div>
+            <a href="https://github.com/PerfectXu88/TeLL-Drive.github.io" class="github-button" target="_blank">View on GitHub</a>
+            <a href="https://arxiv.org/pdf/2502.01387" class="paper-button" target="_blank">Read the Paper on Arxiv</a>
+        </div>
     </header>
     <div class="container">
         <div class="section info">
@@ -136,39 +132,46 @@
         </div>
         <div class="section images">
             <h2>Images</h2>
-            <img src="https://github.com/PerfectXu88/towardssafeandrobust.github.io/blob/main/framework.png?raw=true" alt="The overview of the proposed data-model-knowledge hybrid-driven framework for self-organizing autonomous vehicle platooning.">
+            <img src="https://github.com/PerfectXu88/TeLL-Drive.github.io/blob/main/framework_v3.png?raw=true" alt="Conceptual Framework">
             <h3>The overall conceptual framework of TeLL-Drive, where a DRL student agent is guided by the LLM teacher for better decision making in autonomous driving.</h3>
-            <img src="https://github.com/PerfectXu88/towardssafeandrobust.github.io/blob/main/scenario.png?raw=true" alt="Illustration of the considered traffic scenario and the solution. CAVs (Red) and HDVs (Green) are both considered.">
-            <h3>Illustration of the considered traffic scenario and the solution. CAVs (Red) and HDVs (Green) are both considered.</h3>
-            <img src="https://github.com/PerfectXu88/towardssafeandrobust.github.io/blob/main/Reward.png?raw=true" alt="Illustration of the designed headway maintaining reward, which considers both the single-vehicle rewards and the multi-vehicle rewards.">
-            <h3>Illustration of the designed headway maintaining reward, which considers both the single-vehicle rewards and the multi-vehicle rewards.</h3>
+
+            <img src="https://github.com/PerfectXu88/TeLL-Drive.github.io/blob/main/baselines.png?raw=true" alt="Baselines Comparison">
+            <h3>Comparison of the performance of this model with traditional DRL training results.</h3>
+
+            <img src="https://github.com/PerfectXu88/TeLL-Drive.github.io/blob/main/Ablation.png?raw=true" alt="Ablation Study">
+            <h3>Comparison of performance results during the ablation experiment training process.</h3>
+
+            <img src="https://github.com/PerfectXu88/TeLL-Drive.github.io/blob/main/success_rate_comparison.png?raw=true" alt="Success Rate Comparison">
+            <h3>Comparison of testing success rate results between the teacher agent and the student agent.</h3>
         </div>
         <div class="section video">
             <h2>Videos</h2>
-            <h3>SIL experiment</h3>
-            <h4>The model has been trained in a multitude of scenarios, and the following illustration demonstrates the model's performance in SIL with the selected training results from three typical high-risk scenarios.</h4>
-            <h4>The risk factors encountered are: human interference, traffic accidents and fluctuations in traffic flow.</h4>
+            <h3>Simulation Experiment</h3>
             <video controls>
-                <source src="https://github.com/PerfectXu88/towardssafeandrobust.github.io/blob/main/S - human interference.mp4?raw=true" type="video/mp4">
+                <source src="https://github.com/PerfectXu88/TeLL-Drive.github.io/blob/main/Unsignalized%20intersection.mp4?raw=true" type="video/mp4">
             </video>
+            <h4>Unsignalized intersection: The agent must execute an unprotected left turn at an unsignalized intersection, requiring conflict resolution and time-slot preemption to navigate crossing traffic safely.</h4>
+
             <video controls>
-                <source src="https://github.com/PerfectXu88/towardssafeandrobust.github.io/blob/main/S - traffic accidents.mp4?raw=true" type="video/mp4">
+                <source src="https://github.com/PerfectXu88/TeLL-Drive.github.io/blob/main/High-Speed%20Ramp%20Merging.mp4?raw=true" type="video/mp4">
             </video>
+            <h4>High-Speed Ramp Merging: The agent operates on an acceleration lane, performing speed matching and gap selection to merge seamlessly into highway traffic at elevated velocities.</h4>
+
             <video controls>
-                <source src="https://github.com/PerfectXu88/towardssafeandrobust.github.io/blob/main/S - fluctuations in traffic flow.mp4?raw=true" type="video/mp4">
+                <source src="https://github.com/PerfectXu88/TeLL-Drive.github.io/blob/main/Four-Lane%20Adaptive%20Cruise.mp4?raw=true" type="video/mp4">
             </video>
-            <h3>HIL experiment</h3>
-            <h4>We build a HIL experimental platform and conduct HIL experiments to further test and verify the model's safety and robustness.</h4>
+            <h4>Four-Lane Adaptive Cruise: The agent focuses on fine-grained control of inter-vehicle distances and speeds across four lanes, highlighting precision in longitudinal control and continuous lane tracking.</h4>
+
+            <h3>Vehicle-in-loop Experiment</h3>
             <video controls>
-                <source src="https://github.com/PerfectXu88/towardssafeandrobust.github.io/blob/main/freecompress-H - human interference.mp4?raw=true" type="video/mp4">
+                <source src="https://github.com/PerfectXu88/TeLL-Drive.github.io/blob/main/Vehicle-in-loop%20experiment%20case%201.mp4?raw=true" type="video/mp4">
             </video>
-            <h4>In the first scenario, the platoon encounters a severe static obstruction: a multi-vehicle collision blocking multiple lanes.</h4>
-            <h4>Our model resolves this complex situation through adaptive decision-making, avoiding secondary collisions by allowing the first vehicle to initiate a lane change and the other vehicles to follow once adequate space is available.</h4>
+            <h4>In Case 1, the autonomous vehicle equipped with TeLL-Drive begins from a standstill and accelerates toward the intersection. As it approaches the stop line, the vehicle slows down to create sufficient observation and decision space, enhancing its ability to assess the surrounding traffic. By the 7th second, the vehicle encounters an oncoming vehicle. Upon assessing the situation, the vehicle decides to slow further at the 12th second to yield and avoid a collision. After the oncoming vehicle passes, the autonomous vehicle resumes acceleration and approaches the exit road of the intersection by the 15th second. To maintain a safe distance from the vehicle in front, the system performs adaptive acceleration and deceleration, ensuring both safety and traffic efficiency. In this case, the autonomous vehicle is the last to leave the intersection, but the maneuver was executed safely and efficiently.</h4>
+
             <video controls>
-                <source src="https://github.com/PerfectXu88/towardssafeandrobust.github.io/blob/main/freecompress-H - traffic accidents.mp4?raw=true" type="video/mp4">
+                <source src="https://github.com/PerfectXu88/TeLL-Drive.github.io/blob/main/Vehicle-in-loop%20experiment%20case%202.mp4?raw=true" type="video/mp4">
             </video>
-            <h4>In the second scenario, the platoon faces a dynamic obstruction: the leading vehicle decelerates suddenly at 5 m/s² due to a breakdown.</h4>
-            <h4>Our model effectively coordinates lane changes and vehicle positioning, leading to a smooth reformation of the platoon with optimal efficiency.</h4>
+            <h4>In Case 2, the autonomous vehicle follows similar actions up to the point before entering the intersection. However, at the 6th second, the vehicle observes fewer vehicles in the intersection and determines it can pass first, so it accelerates. By the 8th second, a vehicle on the left side approaches, prompting an interaction. After a brief period of strong interaction between the two vehicles, the simulation vehicle (SV) decides to slow down and stop, while our autonomous vehicle continues to pass first, successfully navigating the intersection.</h4>
         </div>
     </div>
 </body>
