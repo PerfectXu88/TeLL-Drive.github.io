@@ -114,30 +114,30 @@
     <header>
         <h1>TeLL-Drive: Enhancing Autonomous Driving with</h1>
         <h1>Teacher LLM-Guided Deep Reinforcement Learning</h1>
-        <a href="https://github.com/PerfectXu88/towardssafeandrobust.github.io" class="github-button" target="_blank">
+        <a href="https://github.com/PerfectXu88/TeLL-Drive.github.io" class="github-button" target="_blank">
             View on GitHub
         </a>
     </header>
     <div class="container">
         <div class="section info">
             <div class="authors">
-                <a href="https://author1-homepage.com" target="_blank">Chengkai Xu</a>
-                <a href="https://author2-homepage.com" target="_blank">Zihao Deng</a>
+                <a href="https://perfectxu88.github.io/" target="_blank">Chengkai Xu</a>
                 <a href="https://jiaqiliu-aca.netlify.app/" target="_blank">Jiaqi Liu</a>
-                <a href="https://www.polyu.edu.hk/ise/people/academic-staff/chao-huang/" target="_blank">Chao Huang</a>
+                <a href="https://fangshiyuu.github.io/" target="_blank">Shiyu Fang</a>
+                <a href="https://tops.tongji.edu.cn/info/1131/1818.htm" target="_blank">Yiming Cui</a>
                 <a href="https://tops.tongji.edu.cn/info/1031/1383.htm" target="_blank">Peng Hang</a>
             </div>
         </div>
         <div class="section abstract">
             <h2>Abstract</h2>
             <p>
-                In the emerging hybrid traffic flow environment, which includes both human-driven vehicles (HDVs) and autonomous vehicles (AVs), ensuring safe and robust decision-making and control is crucial for the effective operation of self-driving formations. Current systems for cooperative adaptive cruise control and lane changing are inadequate in responding to real-world emergency situations, limiting the potential of autonomous vehicle platooning technology. To address the aforementioned challenges, we propose a Twin-World Safety-Enhanced Data-Model-Knowledge Hybrid-Driven autonomous vehicle platooning Cooperative Control Framework. Within this framework, a deep reinforcement learning formation decision model integrating traffic priors is designed, and a twin-world deduction model based on safety priority judgment is proposed. Subsequently, an optimal control-based multi-scenario decision-control right adaptive switching mechanism is designed to achieve adaptive switching between data-driven and model-driven methods. Through simulation experiments and hardware-in-the-loop tests, our algorithm has demonstrated excellent performance in terms of safety, robustness, and flexibility.
+                Although Deep Reinforcement Learning (DRL) and Large Language Models (LLMs) each show promise in addressing decision-making challenges in autonomous driving, DRL often suffers from high sample complexity, while LLMs have difficulty ensuring real-time decision making. To address these limitations, we propose TeLL-Drive, a hybrid framework that integrates an Teacher LLM to guide an attention-based Student DRL policy. By incorporating risk metrics, historical scenario retrieval, and domain heuristics into context-rich prompts, the LLM produces high-level driving strategies through chain-of-thought reasoning. A self-attention mechanism then fuses these strategies with the DRL agent’s exploration, accelerating policy convergence and boosting robustness across diverse driving conditions. Our experimental results, evaluated across multiple traffic scenarios, show that TeLL-Drive outperforms existing baseline methods, including other LLM-based approaches, in terms of success rates, average returns, and real-time feasibility. Ablation studies underscore the importance of each model component, especially the synergy between the attention mechanism and LLM-driven guidance. Finally, we build a virtual-real fusion experimental platform to verify the real-time, robustness, and reliability of the model when deployed in real vehicles through vehicle-in-loop experiments. These findings suggest that TeLL-Drive significantly enhances both the adaptability and safety of autonomous driving systems, while offering a more efficient and scalable approach for policy learning.
             </p>
         </div>
         <div class="section images">
             <h2>Images</h2>
             <img src="https://github.com/PerfectXu88/towardssafeandrobust.github.io/blob/main/framework.png?raw=true" alt="The overview of the proposed data-model-knowledge hybrid-driven framework for self-organizing autonomous vehicle platooning.">
-            <h3>The overview of the proposed data-model-knowledge hybrid-driven framework for self-organizing autonomous vehicle platooning.</h3>
+            <h3>The overall conceptual framework of TeLL-Drive, where a DRL student agent is guided by the LLM teacher for better decision making in autonomous driving.</h3>
             <img src="https://github.com/PerfectXu88/towardssafeandrobust.github.io/blob/main/scenario.png?raw=true" alt="Illustration of the considered traffic scenario and the solution. CAVs (Red) and HDVs (Green) are both considered.">
             <h3>Illustration of the considered traffic scenario and the solution. CAVs (Red) and HDVs (Green) are both considered.</h3>
             <img src="https://github.com/PerfectXu88/towardssafeandrobust.github.io/blob/main/Reward.png?raw=true" alt="Illustration of the designed headway maintaining reward, which considers both the single-vehicle rewards and the multi-vehicle rewards.">
@@ -169,9 +169,6 @@
             </video>
             <h4>In the second scenario, the platoon faces a dynamic obstruction: the leading vehicle decelerates suddenly at 5 m/s² due to a breakdown.</h4>
             <h4>Our model effectively coordinates lane changes and vehicle positioning, leading to a smooth reformation of the platoon with optimal efficiency.</h4>
-<!--            <video controls>-->
-<!--                <source src="https://github.com/PerfectXu88/towardssafeandrobust.github.io/blob/main/freecompress-H - fluctuations in traffic flow.mp4?raw=true" type="video/mp4">-->
-<!--            </video>-->
         </div>
     </div>
 </body>
